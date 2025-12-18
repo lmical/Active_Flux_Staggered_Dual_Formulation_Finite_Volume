@@ -1,0 +1,598 @@
+\documentclass[letter,11pt]{letter}
+
+\usepackage[margin=0.89in]{geometry}
+%\usepackage{moreverb,latexsym}
+%\usepackage{graphics,graphicx,curves,epic,eepic,ulem,bbm,mathbbol,enumerate,latexsym,multicol}
+\usepackage{lipsum}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{caption}
+%\usepackage{epstopdf}
+%\usepackage{theorem}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+%\usepackage{empheq}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{exscale}
+\usepackage{relsize}
+%\usepackage{float}
+\usepackage{picinpar}
+\usepackage{extarrows}
+\usepackage{multirow}
+%\usepackage{cite}
+\usepackage[backend=bibtex,style=numeric]{biblatex}
+\addbibresource{sn-bibliography.bib}
+\defbibheading{bibliography}[\refname]{\par\bigskip\noindent\textbf{#1}\par}
+
+\usepackage{nicefrac}
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist}
+\usepackage[normalem]{ulem}
+\newcommand{\vla}[1]{\textcolor{magenta}{#1}}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{xcolor}
+\usepackage{enumitem,kantlipsum}
+
+%\usepackage{subcaption}
+%\usepackage{epsfig}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\newcommand{\RIcolor}[1]{{\leavevmode\color{red} #1}}
+\newcommand{\RIIcolor}[1]{{\leavevmode\color{blue} #1}}
+\newcommand{\RIIIcolor}[1]{{\leavevmode\color{magenta} #1}}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}  % optional, for clickable references
+
+% Define a custom figure counter for letters
+\newcounter{myfigure}
+\newcommand{\myfigure}[3][0.8\textwidth]{%
+	\refstepcounter{myfigure}%
+	\begin{center}
+		\includegraphics[width=#1, height=0.75\textheight, keepaspectratio]{#2}%
+		\\[0.5em]
+		\textbf{Figure~\themyfigure:} #3
+	\end{center}%
+}
+
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\uvec}[2][3]{\bm{#2\mkern-#1mu}\mkern#1mu}
+
+
+
+
+\newcommand*\xbar[1]{%
+  \hbox{%
+    \vbox{%
+      \hrule height 0.5pt % The actual bar
+      \kern0.4ex%         % Distance between bar and symbol
+      \hbox{%
+        \kern-0.05em%      % Shortening on the left side
+        \ensuremath{#1}%
+        \kern-0.05em%      % Shortening on the right side
+      }%
+    }%
+  }%
+}
+
+% Some of the article customisations are relevant for this class
+
+\name{Alexander Kurganov} % To be used for the return address on the envelope
+\signature{Alexander Kurganov} % Goes after the closing (ie at the end of the letter, with space for a signature)
+\address{Alexander Kurganov\\
+Department of Mathematics\\
+Southern University of Science and Technology\\
+Shenzhen, 518055, China}
+% Alternatively, these may be set on an individual basis within each letter environment.
+
+%\makelabels % this command prints envelope labels on the final page of the document
+
+\begin{document}
+\begin{letter}{Computers \& Fluids\\
+CAF-D-25-00470}
+
+\opening{Dear Editor:} % eg Hello.
+We would like to thank the reviewers for carefully reading our paper and for their valuable suggestions. We have revised the paper following
+the reviewers' comments.
+
+Below, we outline our responses to the Reviewers' comments and questions. In the revised manuscript, the changes marked in {\color{red}red}
+correspond to remarks made by Reviewer I, {\color{blue}blue} correspond to comments made by Reviewer II, and those marked in
+{\color{magenta}magenta} correspond to remarks made by Reviewer III.
+
+\bigskip
+\underline{Response to the Comments of Reviewer I}
+\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
+\item
+{\bf The method presented by the authors seems to have an overwhelming number of differences to the Active Flux method such that it is not
+clear to me why the authors call their method this way.}
+
+\smallskip
+{\sc\underline{Reply}}: The main reason why we referred to the method as an ``Active Flux'' method was the reliance, in the update of the
+conserved variables, on extra degrees of freedom discretizing primitive variables, whose update does not strictly require conservation, as
+in [1]. In line with the referee's remarks, we have changed the name of our approach into ``Dual Formulation Finite-Volume'' (DF-FV) method,
+and also the name of the paper has been modified to ``Dual Formulation Finite-Volume Methods on Overlapping Meshes for Hyperbolic
+Conservation Laws''. Coherent modifications have been introduced throughout the entire manuscript, and in \S5, a discussion on both the
+similarities and differences between the proposed methods and active flux methods has been added.
+
+\medskip
+{\bf These include:
+
+-- The original Active Flux method by Roe and collaborators uses point values, while the present method uses overlapping FV grids, with an 
+evolution of cell averages for both sets of variables (``As in all FV methods, the computed quantities are cell averages of U and V'', page
+3).
+
+-- The usage of the cell averages of the primitive variables in the computation of the fluxes F could be considered the only common feature 
+with Active Flux. Yet, the authors choose to evolve *averages* of V rather than point values, and therefore the order of accuracy of those 
+fluxes is limited to second. This is a major difference to Active Flux, which is *not* a combination of FV methods on overlapping grids, 
+since it does not only evolve averages. While the interpretation whether a method is of Finite Volume type or of Finite Difference type
+might not be uniquely possible (in particular if the method is non-conservative), the reduction in order of accuracy is an unambiguous sign
+of difference.}
+
+\smallskip
+{\sc\underline{Reply}}: The focus on the second order of accuracy has been clarified in the abstract. At the same time, we would like to 
+point out that the adoption of the proposed discretization, involving cell averages of primitive variables over staggered meshes, does not 
+limit per se the order of accuracy of the DF-FV methods to the second-order one. To develop higher-order DF-FV methods, one may, for 
+instance, replace the finite-volume method for the $\bm V$-system with a closely related higher-order finite-difference A-WENO scheme. This 
+way, one can obtain the point values at the staggered nodes and, in the 2-D case, the point values at suitable quadrature points along cell 
+interfaces can then be computed using proper WENO-type 1-D interpolations. In addition, a careful high-order modification of the post-
+processing has to be developed, as briefly discussed in \S5.
+
+\smallskip
+We would also like to note that the accuracy of AF schemes is not necessarily higher than two. For example, in the 1-D case, it essentially
+depends on the accuracy of the discretization of the evolution of the point values; see [1,18] where second-order options are discussed.
+
+\medskip
+{\bf -- The authors adopt the view of *two* different solutions, which seems natural for methods on overlapping grids, but is not natural at
+all for Active Flux. In the end, it would also be odd to consider DG to be a FV method with many overlapping FV cells. While in Active Flux,
+just as in DG, the many degrees of freedom *make up* the solution, in the present work, the authors seem to adopt the point of view of
+having computed the solution "twice" and seem to experience the need to somehow relate the two in a post-processing step. Again, for DG this
+would be very unusual, and also in Active Flux this is not needed; in fact in Active Flux it is not possible to, for instance, claim that
+"the solution realized by V will not necessarily be conservative" since the evolutions are coupled and the properties of the point values
+cannot be established independently of those of the cell averages. A clear sign that the present method is not similar to Active Flux is
+that solutions converging to non-entropic shocks have not been observed with Active Flux, as far as I am informed. In fact, here the degrees
+of freedom do not seem to be coupled sufficiently and each live their own life, while in Active Flux decoupling does not happen. Again, the 
+decoupling is a factual difference, not a conceptual one.}
+
+\smallskip
+{\sc\underline{Reply}}: As stated in \S5, the decoupling between primitive and conserved cell averages brings certain advantages. For
+example, the decoupling is crucial for the development of DF-FV methods for compressible multifluid flows, in which solving the $\bm V$-
+system in the vicinity of material interfaces allow one to prevent the development of spurious oscillations in the velocity and pressure 
+fields. The main idea is to adopt an interface tracking using the level set approach implemented in the primitive system only. This will 
+indicate which fluid is present at each cell interface for the computation of the fluxes used for updating the conserved variables. Though 
+the development of DF-FV methods for multifluid flows is relatively easy, it is not straightforward, and we leave it for an upcoming paper. We can, however,
+report several promising preliminary results (see Figures \ref{fig1}--\ref{fig5} below) obtained by the DF-FV method for all of the
+benchmarks from [10].
+
+%[{\sc A. Chertock, S. Chu, and A. Kurganov}, {\em Hybrid multifluid algorithms based on the path-conservative central-upwind scheme}, J.
+%Sci. Comput., 89 (2021). Paper No. 48].
+
+\myfigure[1.0\textwidth]{figures/multifluid_sod_W_X_SSPRK3_CFL0.475.pdf}{\sf Results for multifluid shock--tube problem.}\label{fig1}
+
+\myfigure[1.0\textwidth]{figures/multifluid_stiff_sod_W_X_SSPRK3_CFL0.475.pdf}{\sf Results for multifluid stiff shock-tube problem.}
+\label{fig2}
+
+\myfigure[1.0\textwidth]{figures/multifluid_water_air_W_X_SSPRK3_CFL0.475.pdf}{\sf Results for water-air problem.}\label{fig3}
+
+\myfigure[1.0\textwidth]
+{figures/final_results_multifld_CFL0.475/helium/SOLUTION_OCT_0000001.5000000.dat.png}{\sf Schlieren plot for Helium bubble at time $t=1.5$.}
+\label{fig4}
+
+\myfigure[1.0\textwidth]
+{figures/final_results_multifld_CFL0.475/r22/SOLUTION_OCT_0000001.5000000.dat.png}{\sf Schlieren plot for R22 bubble at time $t=1.5$.}
+\label{fig5}
+
+\smallskip
+In addition, having two sets of data for the discrete solution has been used to design a smoothness indicator based on the difference
+between these two solutions; see [11]. This smoothness indicator can be used to develop different adaptation strategies, which may
+substantially enhance the resolution achieved by the DF-FV method.
+
+\medskip
+{\bf -- The focus on second-order accuracy (which is not actually stated clearly anywhere, please mention it in the abstract straight away)
+means that the authors merely consider a second-order (CU) scheme for the update of V and that they transform between conservative and
+primitive variables while ignoring the fact that they are dealing with cell averages (e.g., in 2.1). It also has consequences for the way
+they extend the method to 2-D. It is very unclear how this method will ever reach third-order accuracy, something that is effortless with
+the original Active Flux method.}
+
+\smallskip
+{\sc\underline{Reply}}: We have already responded to this comment at the top of page 2 in this letter.
+
+\medskip
+{\bf -- The extension to 2-D, following the paradigm of second-order accuracy only, results in a different set of degrees of freedom from those of 
+Active Flux (no point values at nodes). None of the properties of the Active Flux method in 2-D can therefore be a-priori expected to 
+transfer to the present method, since the multi-dimensional coupling at the nodes is missing.
+
+\smallskip
+Since the present method is only second-order accurate I do not think that a comparison to the Active Flux method would turn out to be in favor of the new approach. To present an improvement over existing approaches, however, is an important part of the assessment of the publication criteria. I do believe, though, that the work is interesting and deserves publication. Since it is significantly closer in spirit to overlapping-mesh FV methods, I suggest the authors modify the title for it to read "A New Finite-Volume Method on Overlapping Meshes", and provide a detailed comparison with the approaches that at the moment they merely cite ([31,33,34,50,32,50,51]). How does the present paper outperform those previous approaches?}
+
+\smallskip
+{\sc\underline{Reply}}: We have added a comparative study (in Examples 2--5), which demonstrates that the proposed second-order DF-FV-FV scheme
+outperforms the second-order central scheme on overlapping cells from [31].
+
+\medskip
+\item
+{\bf It seems that the simultaneous usage of the primitive and the conservative variables creates problems. What is the research gap that 
+this paper intends to fill? What property does the resulting method gain from the mixed-variables approach? To me it seems that this
+approach only results in the need for complicated and mostly ad-hoc post-processing that, of course, only adds numerical diffusion.}
+
+\smallskip
+{\sc\underline{Reply}}: As we have mentioned above, using the primitive variables may be advantageous in applications to compressible
+multifluids. We have also pointed out that the dual formulation of the studied problem can yield a very simple and robust smoothness
+indicator, which we are currently using to develop novel adaptive methods. In addition, we have been working on the development of
+asymptotic preserving numerical methods, which heavily rely on the primitive formulation of the studied problems. Therefore, the presented
+DF-FV framework will play an essential role in the development of several novel and powerful numerical methods for a variety of
+applications.
+
+\medskip
+\item
+{\bf In the linear case, is your method L2 stable at all? Please provide a detailed and convincing stability analysis, at least in 1d, of the method without post-processing.}
+
+\smallskip
+{\sc\underline{Reply}}: We have added \S2.2 with a linear stability analysis.
+
+\medskip
+\item
+{\bf Why do the authors waste resources on a three-stage RK method if they are only second-order accurate?}
+
+\smallskip
+{\sc\underline{Reply}}: 
+
+We have used the three-stage third-order strong stability-preserving Runge-Kutta (SSPRK) method due to its very good stability properties.
+First, it is SSP. Second, its stability domain is substantially larger than that of the second-order SSPRK method. It is well-known that
+using the second-order SSPRK method may lead to spurious oscillations, which can be removed by taking substantially smaller time steps. 
+However, it is hard to a priori predict whether these oscillations will appear. Thus, if the obtained solution is oscillatory, then one 
+would not know what caused the oscillations: the space discretization method or the ODE solver. To minimize the chances of such a situation 
+occurring, we always prefer to use the three-stage third-order SSPRK method rather than its second-order counterpart when solving nonlinear hyperbolic systems of PDEs.
+
+\smallskip
+A short comment has been added at the beginning of \S4 on page 13.
+
+\medskip
+\item
+{\bf The authors need to demonstrate that their new method has advantages over existing ones. Please add comparisons to the CU scheme alone 
+(e.g., in example 5). The comparison in Example 4 says "implemented on the same mesh": however, the present method uses twice the number of 
+variables (and e.g. presumably runs longer). It might be more adequate to compare with classical methods on half the mesh spacing, or with 
+the same number of variables, or with the same overall computation time.}
+
+\smallskip
+{\sc\underline{Reply}}: We have added a comparison with a second-order central scheme on overlapping cells from [31]; see Examples 2--5.
+
+\smallskip
+Concerning the computational cost, the proposed DF-FV approach makes use of more degrees of freedom (just like the Active Flux approach
+does) with respect to standard FV schemes. However, many operations can be carried out in parallel. The updates of $\bm V^x$ and $\bm V^y$
+can be performed independently, while, the update of $\bm U$ requires $\bm V^x$ and $\bm V^y$, but no reconstructions and simple numerical
+flux evaluations. Therefore, with a suitable parallelization of the operations, the computational cost may be significantly reduced,
+especially since the post-processing is performed only once per time step. We have added Remark 3.2 to clarify this point in the revised
+manuscript.
+
+\smallskip
+Our preliminary results (not reported in the paper) clearly indicate that the DF-FV method outperforms the CU scheme on the same mesh. As
+for the comparison with the same overall computation time, one needs to implement the parallelization of both schemes carefully, and this is
+outside the scope of the current paper.
+
+\medskip
+\item
+{\bf Actually, an alternative extension to 2-D might have been to place the V variables on the vertices of the mesh (instead of the edges) 
+and to use the trapezoidal rule for evaluating the flux. Did the authors consider this method? It might be 1/3 more efficient since there
+are (on total) less degrees of freedom to update.}
+
+\smallskip
+{\sc\underline{Reply}}: We would like to thank the referee for the suggestion. We have implemented the approach, placing the
+$\bm V$-variables at the cells centered at vertices. Unfortunately, the results were not as good as the ones we obtained with the current
+version of the DF-FV method.
+
+\smallskip
+In particular, in the explosion problem (Example 6), we got small spurious oscillations in density and pressure, which were not previously
+present; see Figure \ref{fig6} below and compare it with Figure 4.8 in the revised manuscript.
+
+\myfigure[1.0\textwidth]{figures/sod2d_400_VS_PP-1_SSPRK3_CFL0.475_compare_diag}
+{\sf Results for the explosion problem with $\bm V$ evolved at the cells centered at vertices.}\label{fig6}
+
+\smallskip
+We have also tested the 2-D Riemann problem (Configuration 3). The densities, computed by the original DF-FV method and the DF-FV method
+with $\bm V$ evolved at the cells centered at vertices, are shown in Figure 7 below. As one can see, the evolution of $\bm V$ at the cells
+centered at vertices leads to a significantly larger numerical diffusion, which does not allow for capturing a sideband instability of the 
+jet in the zones of strong along-jet velocity shear and the instability along the jet’s neck.
+
+\begin{center}
+\includegraphics[width=0.42\textwidth, height=0.75\textheight, keepaspectratio]{figures/rp2d_U_contour_density}\hspace*{0.8cm}
+\includegraphics[width=0.42\textwidth, height=0.75\textheight, keepaspectratio]{figures/rp2d_U_contour_density_V_at_vertices}
+\\[0.5em]
+\textbf{Figure 7:} {\sf Results for the 2-D Riemann problem (Configuration 3) computed by the original DF-FV method (left) and the DF-FV
+method with $\bm V$ evolved at the cells centered at vertices (right).}
+\end{center}
+
+\medskip
+\item
+{\bf Example 6: "As one can see, neither spurious oscillations nor anomalous features are visible". Actually, in the velocity, there are a 
+quite visible spurious oscillation on the speed in the Vx variable (center, lower row, Figure 4.7), an oscillation on the contact for the 
+momentum in the U solution (center, upper row), and a small oscillation between the rarefaction and the contact visible in both the density 
+and the energy in all variables. I believe the authors should weaken their claim.}
+
+\smallskip
+{\sc\underline{Reply}}: We rephrased that sentence in the revised version of the manuscript.
+
+We would like to point out that oscillations around the contact discontinuity on this test are rather standard for any scheme, and they are
+due to its instability. In Figure 8 below, we report the results computed by a second-order finite-volume method based on the exact 1-D
+Riemann problem solvers in the $x$- and $y$-directions, with the same spatial reconstruction as considered in the paper, using $\theta=1.3$.
+As one can see, the results are very similar to the ones obtained with DF FV; compare Figure 8 below with Figure 4.8 in the revised
+manuscript.
+
+\begin{center}
+\includegraphics[width=0.9\textwidth, height=0.75\textheight, keepaspectratio]{figures/sod2d_EXRS_compare_diag}
+\\[0.5em]
+\textbf{Figure 8:} {\sf Results for the explosion problem obtained by a second-order finite-volume method based on the exact Riemann problem
+solvers in the $x$- and $y$-directions and the same spatial reconstruction as the one considered in the paper with $\theta=1.3$.}
+\end{center}
+
+\medskip
+\item
+{\bf p.2: "As demonstrated in [4]": I believe an older reference is "Why nonconservative schemes converge to wrong solutions: error
+analysis" by Hou, Thomas Y and LeFloch, Philippe G, 1994.}
+
+\smallskip
+{\sc\underline{Reply}}: We thank the referee for the remark. We have added this reference.
+
+\medskip
+\item
+{\bf Last but one paragraph of the Introduction: "At At"}
+
+\smallskip
+{\sc\underline{Reply}}: Corrected.
+
+\medskip
+\item
+{\bf Example 7: "tructures"}
+
+\smallskip
+{\sc\underline{Reply}}: Corrected.
+\end{enumerate}
+
+\bigskip
+\underline{Response to the Comments of Reviewer II}
+
+\begin{itemize}[wide, labelwidth=!, labelindent=0pt]
+\item
+{\bf Typos/minor unclarities:}
+
+\medskip
+{\bf- p. 3 middle: "At At"}
+
+\smallskip
+{\sc\underline{Reply}}: Corrected.
+
+\medskip
+{\bf- (1.2) and p. 3 top: $B(V), C(V) or B^x(V), B^y(V)$? Choose one notation}
+
+\smallskip
+{\sc\underline{Reply}}: Corrected: It should have been $B(\bm V)$ and $C(\bm V)$.
+
+\medskip
+{\bf- p. 4: last comma is red}
+
+\smallskip
+{\sc\underline{Reply}}: Corrected.
+
+\medskip
+{\bf- p. 8 top: "are given by"}
+
+\smallskip
+{\sc\underline{Reply}}: Corrected.
+
+\medskip
+{\bf- p.13 top: "preserves"}
+
+{\sc\underline{Reply}}: In the revised version of that sentence, ``preserve'' is correct, and we now discuss two schemes there.
+
+\medskip
+{\bf- Fig. 4.3: put all legends to the left bottom}
+
+\smallskip
+{\sc\underline{Reply}}: Done.
+
+\medskip
+{\bf- p.18 bottom: "in the literature" $->$ give reference}
+
+\smallskip
+{\sc\underline{Reply}}: We have added a reference. In addition, we have also included a very accurate reference solution computed by a
+seventh-order WENO-DeC scheme.
+
+\medskip
+{\bf- Table 4.1: How does the post-processing affect the global error?}
+
+\smallskip
+{\sc\underline{Reply}}: We have computed the corresponding errors when the presented DF-FV method is used without the post-processing. The
+obtained results are reported in the table below. We, however, decided not to include this table in the paper since the DF-FV method
+without the post-processing cannot capture nonsmooth solutions, and this is impractical.
+
+\medskip
+\begin{center}
+\begin{tabular}{|c|cc|cc|cc|cc|cc|}
+\hline
+$N$ & $\rho$-error & rate & $\rho u$-error & rate & $E$-error & rate & $v$-error & rate & $p$-error & rate \\
+\hline
+100  & 8.63e-03 & -- & 1.85e-02 & -- & 5.21e-02 & -- & 3.07e-02 & -- & 1.93e-02 & -- \\
+200  & 3.47e-03 & 1.31 & 8.21e-03 & 1.17 & 2.22e-02 & 1.23 & 9.02e-03 & 1.77 & 4.89e-03 & 1.98 \\
+400  & 1.33e-03 & 1.38 & 3.26e-03 & 1.33 & 8.92e-03 & 1.32 & 2.21e-03 & 2.03 & 1.14e-03 & 2.10 \\
+800  & 2.33e-04 & 2.51 & 6.63e-04 & 2.30 & 1.70e-03 & 2.39 & 4.91e-04 & 2.17 & 2.39e-04 & 2.25 \\
+1600 & 4.02e-05 & 2.54 & 1.19e-04 & 2.47 & 3.04e-04 & 2.49 & 1.02e-04 & 2.26 & 4.72e-05 & 2.34 \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip
+We would also like to point out that the numbers in Table 4.1 have changed since we modified the 2-D post-processing.
+
+\medskip
+\item
+{\bf Major points:}
+
+\medskip
+{\bf- Please add a plot with contour lines for a 2D-Riemann problem, e.g. Configuration 3 from "Solution of Two-Dimensional Riemann
+Problems for Gas Dynamics without Riemann Problem Solvers", Alexander Kurganov, Eitan Tadmor, Numerical Methods for Partial Differential
+Equations, Volume  18, Issue 5, Pages 584-608, 2002}
+
+\smallskip
+{\sc\underline{Reply}}: We have added Example 8.
+
+\smallskip
+This test was particularly challenging for our method. In the original version of the manuscript, the 2-D post-processing was performed in
+two sweeps: a first sweep in the $x$-direction and a second sweep in the $y$-direction. This was creating an asymmetry between the two
+Cartesian directions, resulting in a substantial asymmetry in the results obtained for the 2-D Riemann problem; see Figure 9 (left) below.
+Therefore, we have modified the post-processing. In order to reinstate symmetry between the Cartesian directions, we average the results
+obtained through two sub-post-processings as described in detail on pages 11--12 in the revised manuscript. 
+\begin{center}
+\includegraphics[width=0.42\textwidth, height=0.75\textheight, keepaspectratio]{figures/rp2d_U_contour_density_original_PP}\hspace*{0.8cm}
+\includegraphics[width=0.42\textwidth, height=0.75\textheight, keepaspectratio]{figures/rp2d_U_contour_density}
+\\[0.5em]
+\textbf{Figure 9:} {\sf Results for the 2-D Riemann problem (Configuration 3) computed by the original DF-FV method with the original (left)
+and modified (right) post-processings.}
+\end{center}
+
+\medskip
+{\bf- To my knowledge, the original Active Flux method is third order accurate, truly multidimensional and fully discrete with a compact 
+stencil in space and time. The Fluxes are "Active" in the sense, that they are not computed via interpolation of cell centered data. Recently
+semi-discrete Active Flux methods arised, which already lost some of these features. What is your definition of "Active Flux"? Which 
+properties of the original method are still present?}
+
+\smallskip
+{\sc\underline{Reply}}: This point has already been addressed in response to comments of Reviewer I; see item 1 on pages 1--4 in this
+letter.
+\end{itemize}
+
+\bigskip
+\underline{Response to the Comments of Reviewer III}
+\begin{itemize}[wide, labelwidth=!, labelindent=0pt]
+\item
+{\bf p. 2f: Is the choice of the split for $F$, $G$ for the nonconservative formulation of the Euler equations trivial? Maybe a short
+explanation for this particular choice might be nice?}
+
+\smallskip
+{\sc\underline{Reply}}: We have run the simulations for different nonconservative formulations of the Euler equations, and the obtained
+results were almost identical. We believe that this is attributed to a distinctive property of the PCCU scheme, now mentioned in
+Remark 2.2: Once the path in the PCCU scheme has been selected, the resulting method is not sensitive to a particular choice of the
+nonconservative formulation.
+
+\medskip
+\item
+{\bf Sec. 2: The explanations of the modified PCCU scheme seem to focus on presenting the actual algorithm and formulas for the
+non-conservative system. Although literature is given a few more explaining words on the method including the choices of updates (2.5) and
+their fluxes (2.6) incl. the derived characteristics and the built-in anti-diffusion and choices for $B_{j+\frac{1}{2}}, B_{\Psi,j}$ might
+be helpful.}
+
+\smallskip
+{\sc\underline{Reply}}: We have added Remark 2.1 and a sentence before it in the revised manuscript.
+
+\medskip
+\item
+{\bf For the numerical examples (Sec. 4), further comparisons to other methods (AF, PCCU, LDCU (see Ex. 4)) might be helpful to elaborate on 
+the motivation and benefits of the method.}
+
+\smallskip
+{\sc\underline{Reply}}: We have added a comparison with a second-order central scheme on overlapping cells from [31]; see Examples 2--5.
+
+\smallskip
+At the same time, we have removed the comparison with the LDCU scheme from Example 4. The reason is related to the fact that the proposed
+DF-FV method utilizes more degrees of freedom compared to standard FV schemes. Therefore, it may not be proper to compare the
+performance of the DF-FV method with the LDCU scheme implemented on the same mesh. On the other hand, many operations in the DF-FV framework
+can be carried out in parallel. The updates of $\bm V^x$ and $\bm V^y$ can be performed independently, while, the update of $\bm U$ requires
+$\bm V^x$ and $\bm V^y$, but no reconstructions and simple numerical flux evaluations. Therefore, with a suitable parallelization of the
+operations, the computational cost may be significantly reduced, especially since the post-processing is performed only once per time step. 
+
+\smallskip
+In order to conduct a fair comparison between the proposed DF-FV and standard FV methods, one has to check their performance when the same
+CPU time is consumed. To this end, one needs to implement the parallelization of both studied schemes carefully, and this is beyond the scope
+of the current paper.
+
+\medskip
+\item
+{\bf p.11: Could you comment on the choice of CFL? Could it be chosen even larger compared to semi-discrete AF? Or is this also a typical 
+choice for a PCCU scheme?}
+
+\smallskip
+{\sc\underline{Reply}}: We have increased the CFL value to $0.475$ and re-generated all of the results. As the theoretical upper bound on
+the CFL number for all of the central schemes (including the PCCU one) is $0.5$, no additional restrictions are attributed to the use of the
+DF-FV approach has been observed.
+
+\medskip
+\item
+{\bf Ex. 2: Could you maybe explain the spikes further?}
+
+\smallskip
+{\sc\underline{Reply}}: We have added a further explanation on page 14 before Figure 4.1 in the revised manuscript.
+
+\medskip
+\item
+{\bf Ex. 4: Could you maybe explain why a comparison with the LDCU scheme is done (other than PCCU or AF)?}
+
+\smallskip
+{\sc\underline{Reply}}: In the revised manuscript, we compare the proposed DF-FV method with another method that uses overlapping meshes:
+A second-order central scheme on overlapping cells from [31].
+
+\medskip
+\item
+{\bf Ex. 3: Could you maybe add a few comments considering the damping in u?}
+
+\smallskip
+{\sc\underline{Reply}}: We have added a sentence at the end of Example 3.
+
+\medskip
+\item{\bf p.1 in Keywords: “.” before states should be removed?}
+
+\smallskip
+{\sc\underline{Reply}}: The work ``states'' has been removed: it was a typo.
+
+\medskip
+\item
+{\bf p. 3 at top, 1st formula: Should it be $B(V ), C(V )$ instead of $B^x(V ), B^y(V )$?}
+
+\smallskip
+{\sc\underline{Reply}}: Corrected.
+
+\medskip
+\item
+{\bf p. 3, 2nd passage, 2nd sentence: One “At” to many.}
+
+\smallskip
+{\sc\underline{Reply}}: Corrected.
+
+\medskip
+\item
+{\bf p. 3 at bottom, last formula: Should the averages $\bar U_j, \bar V_{j+\frac{1}{2}}$ over cell size $\frac{1}{\Delta x}$? And
+analogously for 2-d case at p.6 at bottom?}
+
+\smallskip
+{\sc\underline{Reply}}: Corrected.
+ 
+\medskip
+\item
+{\bf p. 16, 1st passage, 2nd sentence of Example 7: “complex flow structures” (missing “s”).}
+
+\smallskip
+{\sc\underline{Reply}}: Corrected.
+
+\medskip
+\item
+{\bf Reference [28]: Missing author?}
+
+\smallskip
+{\sc\underline{Reply}}: We have slightly changed the bibliography style to avoid any confusion.
+\end{itemize}
+
+\vspace*{2cm}
+\closing{Sincerely} % eg Regards,
+\end{letter}
+
+\end{document}
+
