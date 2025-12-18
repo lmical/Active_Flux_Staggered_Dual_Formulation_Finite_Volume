@@ -1,0 +1,8 @@
+Active Flux Method for Accurate Multifluid Simulations
+
+Numerical simulation of hyperbolic PDEs is of fundamental importance in many different applications, for example, in the description of phenomena involving fluid flows.
+The particular structure of these problems poses several challenges at the numerical level, like the occurrence of discontinuities in the analytical solutions, whose improper handling can cause simulation crashes and blow-ups.
+These challenges are even harder when considering phenomena with more fluids of different nature interacting with each other.
+The accurate numerical simulation of such phenomena is the main goal of this presentation.
+
+

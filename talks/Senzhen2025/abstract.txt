@@ -1,0 +1,6 @@
+A New Semi-Discrete Finite Volume Active Flux Method for Hyperbolic Conservation Laws with Application to Multifluid Flows
+
+We propose a new Active Flux framework for hyperbolic systems of partial differential equations that combines conservative and primitive formulations of a given system. The two formulations are discretized on overlapping staggered meshes, where both conserved and primitive variables are represented by cell averages. The update of the conserved variables is performed via simple flux evaluations of point values reconstructed out of the primitive cell averages, while a Path-Conservative Finite Volume scheme is used for the update of the primitive variables.
+To avoid convergence to incorrect solutions, often observed in schemes that evolve primitive variables directly, we introduce a conservative post-processing procedure that consistently couples the two formulations, ensuring both conservation and an accurate treatment of discontinuities. The proposed method is validated through a series of one- and two-dimensional benchmark problems for the Euler equations of gas dynamics. A straightforward extension to multifluid flows will also be discussed.
+
+

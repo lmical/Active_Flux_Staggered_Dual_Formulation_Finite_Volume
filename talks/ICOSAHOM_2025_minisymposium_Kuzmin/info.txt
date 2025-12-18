@@ -1,0 +1,10 @@
+30 minutes including questions
+
+ID: 282
+Abstract Submissions
+Topics: MS 123 - Advanced stabilization methods for high-order discretizations of hyperbolic problems
+A novel Active Flux Method for Accurate Multifluid Simulations
+
+Tuesday July 15
+15:00 - 15:30  A Novel Active Flux Method for Accurate Multifluid Simulations
+Presenter: Lorenzo Micalizzi, North Carolina State University

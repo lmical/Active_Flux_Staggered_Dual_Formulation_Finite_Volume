@@ -1,0 +1,7 @@
+Active Flux Method for Accurate Multifluid Simulations
+
+This talk introduces a novel Active Flux method for the numerical solution of the Euler equations in the presence of multiple immiscible fluids. The proposed approach employs a sharp interface strategy, based on the evolution of a level set function to accurately track fluid boundaries. Several simulations involving strong discontinuities and shock-bubbles interactions, characterized by the formation of complex structures, will be shown to demonstrate the robustness and the critical aspects of the proposed scheme.
+
+
+
+

@@ -1,0 +1,7 @@
+Minisymposia presentations are twenty-five (25) minutes with an additional five (5) minutes for discussion
+
+https://meetings.siam.org/sess/dsp_programsess.cfm?SESSIONCODE=85616
+
+Wednesday, November 19
+10:00-10:25 A New Semi-Discrete Finite-Volume Active Flux Method for Hyperbolic Conservation Laws
+
