@@ -1,0 +1,364 @@
+#####################
+#CFL 0.95
+#200 elements
+#####################
+nametest="shock_turbulence_interaction_shu_osher"
+file="SOLUTION_OCT_0000001.8000000.dat"
+CFL_test=0.475 #OK
+solution_type="reference solution"
+xspan=[-5,5]
+
+gmm=1.4
+
+
+teststocompare=[] 
+#Reconstructed variable, riemann_solver, speed_estimate, order, CFL, RelaxedCFL, NRelaxedTimeSteps
+teststocompare.append(["27NLDCU",3, 1, CFL_test]) 
+# teststocompare.append(["27LDCU",3, 1, CFL_test]) 
+# teststocompare.append(["27CU",3, 1, CFL_test]) 
+teststocompare.append([-27,2, -1, CFL_test]) 
+
+import os
+from glob import glob
+import numpy as np
+import matplotlib.pyplot as pl
+from mpl_toolkits.axes_grid1.inset_locator import inset_axes, mark_inset
+
+
+fs=12
+lw=0.5
+lwex=1.5
+ms=2.0
+ms_zoom=2.5
+
+pl.rcParams['xtick.labelsize'] = 4
+pl.rcParams['ytick.labelsize'] = 4
+
+
+linestyles_space_reconstruction = {1: "--",
+                                   10:"--",
+                                   2: "--",
+                                   20:"--",
+                                   21:"--",
+                                   22:"--",
+                                   23:"--",
+                                   24:"--",
+                                   25:"--",
+                                   26:"--",
+                                   "27CU":"-",
+                                   "27LDCU":"-",
+                                   "27NLDCU":"-",
+                                  -1: "-",
+                                  -10:"-",
+                                  -2: "-",
+                                  -20:"-",
+                                  -21:"-",
+                                  -22:"-",
+                                  -23:"-",
+                                  -24:"-",
+                                  -25:"-",
+                                  -26:"-",
+                                  -27:"-"}
+
+markers_space_reconstruction   = { 1: "x",
+                                   10:"x",
+                                   2: "x",
+                                   20:"x",
+                                   21:"x",
+                                   22:"x",
+                                   23:"x",
+                                   24:"x",
+                                   25:"x",
+                                   "27CU"   :"x",
+                                   "27LDCU" :"P",
+                                   "27NLDCU":"s",
+                                  -1: "o",
+                                  -10:"o",
+                                  -2: "o",
+                                  -20:"o",
+                                  -21:"o",
+                                  -22:"o",
+                                  -23:"o",
+                                  -24:"o",
+                                  -25:"o",
+                                  -26:"o",
+                                  -27:"o"}
+
+
+#Updated col
+colors = {
+     1:"#17becf",  #PWC
+     2:"#d62728",  #MINMOD
+     20:"#d62728", #MINMOD
+     21:"#1f77b4", #
+     22:"#ff7f0e", #
+     23:"#2ca02c", #
+     24:"#9467bd",  #
+    # "27CU"   :"purple",
+    # "27LDCU" :"green",
+    "27NLDCU":"blue",
+    -1:"#17becf",  #PWC
+    -2:"#d62728",  #MINMOD
+    -20:"#d62728", #MINMOD
+    -21:"#1f77b4", #
+    -22:"#ff7f0e", #
+    -23:"#2ca02c", #
+    -24:"#9467bd",  #
+    -26:"red", #AAAAAAAAAAAAAAAAAAAAAA
+    -27:"red", #AAAAAAAAAAAAAAAAAAAAAA
+
+     93:"#e377c2", #
+
+     6:"#8c564b",  #
+    -2:"#bcbd22",  #
+
+    -6:"#ff9896",  #
+     7:"#7f7f7f"   #
+}
+
+# colors = {
+#     3:  "#1f77b4",   # 
+#     5:  "#ff7f0e",   # 
+#     7:  "#2ca02c",   # 
+#     9:  "#d62728",   # 
+#     11: "#9467bd",   # 
+#     13: "#8c564b",   # 
+#     15: "#17becf",   # 
+#     17: "#bcbd22",   # 
+#     19: "#e377c2",   # 
+#     21: "#7f7f7f",   # 
+#     23: "#ff9896",   # 
+#     25: "#98df8a",   # New
+#     27: "#c5b0d5",   # New
+#     29: "#c49c94",   # New
+#     31: "#f7b6d2",   # New
+#     33: "#aec7e8",   # New
+#     35: "#ffbb78",   # New
+#     37: "#9edae5",   # New
+#     39: "#dbdb8d",   # New
+#     41: "#c7c7c7",   # New
+#     43: "#bc80bd",   # New
+#     45: "#6b6ecf",   # New
+#     47: "#b5cf6b",   # New
+#     49: "#e7969c",   # New
+#     51: "#d6616b",   # New
+#     53: "#843c39",   # New
+#     55: "#8c6d31",   # New
+#     57: "#d9d9d9",   # New
+#     59: "#7b4173",   # New
+#     61: "#b15928",   # New
+#     63: "#6baed6"    # New
+# }
+
+####################################################
+name_reconstructed_variable = {0:"cons",    1:"char"}
+name_riemann_solver         = {-2:"central", -1:"LF", 0:"rusanov", 1:"exact", 2:"HLL", 3:"CU", 4:"LDCU", 5:"HLLC", 6:"FORCE",7:"FORCEalpha"}
+name_speed_estimate         = {0:"standard",1:"riemann"}
+order_of_plotting           = {1:9,2:8,3:7,5:6,7:5,9:4,11:3,13:2}
+####################################################
+
+####################################################
+label_reconstructed_variable = {0:"cons.",    1:"char."}
+label_riemann_solver         = {-2:"Central", -1:"LxF", 0:"Rus", 1:"Ex.RS", 2:"HLL", 3:"CU", 4:"LDCU", 5:"HLLC", 6:"FORCE",7:r"FORCE-$\alpha$"}
+label_space_reconstruction   =   { 1: "FV-o1"          ,
+                                   10:"FV-o1-PWL in PC",
+                                   2: "FV-o2-MUSCL"    ,
+                                   20:"FV-o2-MUSCL"    ,
+                                   21:"FV-o2-k-MUSCL"  ,
+                                   22:"FV-o2-CO-MUSCL" ,
+                                   23:"FV-o2-VL-MUSCL" ,
+                                   24:"FV-o2-M-MUSCL"  ,
+                                   25:"FV-o2-VA-MUSCL" ,
+                                #    "27CU"   :"CU",
+                                #    "27LDCU" :"LDCU",
+                                   "27NLDCU":"LDCU",
+                                  -1: "AF-o1"          ,
+                                  -10:"AF-o1-PWL in PC",
+                                  -2: "AF-o2-MUSCL"    ,
+                                  -20:"AF-o2-MUSCL"    ,
+                                  -21:"AF-o2-k-MUSCL"  ,
+                                  -22:"AF-o2-CO-MUSCL" ,
+                                  -23:"AF-o2-VL-MUSCL" ,
+                                  -24:"AF-o2-M-MUSCL"  ,
+                                  -25:"AF-o2-VA-MUSCL" ,
+                                  -26:"AF-o2-SBM",
+                                  -27:"DF-FV" }
+label_time_scheme            =   { 1: "Euler"          ,
+                                   2: "SSPRK2"         ,
+                                   3: "SSPRK3"         ,
+                                   4: "SSPRK4"         ,
+                                   5: "RK65"           ,
+                                   12:"SSPRK2"         , #NB:DeC2 is SSPRK2
+                                   13:"DeC3"           ,
+                                   14:"DeC4"           ,
+                                   15:"DeC5" }
+####################################################
+
+nVar=3
+
+
+params = {'mathtext.default': 'regular' } #parameters plot
+
+pl.rcParams['xtick.labelsize'] = 4
+pl.rcParams['ytick.labelsize'] = 4
+
+
+fig_density, ax_density = pl.subplots(1)
+pl.title(r"$\rho$",fontsize=fs+5)
+# pl.grid()
+# Place the legend next to the main plot
+
+# Create an inset axes object with specific dimensions and position it outside the main plot area
+axins1_density = inset_axes(ax_density, width="100%", height="180%", loc='upper right', bbox_to_anchor=(1.05, 0.48, 0.4, 0.4), bbox_transform=fig_density.transFigure)
+# Set the limits for the zoomed-in region
+x1, x2, y1, y2 = 0.5, 2.5, 2.8, 4.8  # Specify the limits of the zoomed-in area
+axins1_density.set_xlim(x1, x2)
+axins1_density.set_ylim(y1, y2)
+axins1_density.set_title("A",fontsize=fs+10)
+# Add a rectangle to highlight the zoomed area in the main plot
+ax_density.indicate_inset_zoom(axins1_density, edgecolor="black")
+mark_inset(ax_density, axins1_density, loc1=2, loc2=4, fc="none", ec="0.5")
+
+
+ax_density.tick_params(axis='both', which='major', labelsize=15)
+axins1_density.tick_params(axis='both', which='major',  labelsize=15)
+
+
+firsttime=True
+index_plot=0
+
+##############################
+# READ AND PLOT EXACT SOLUTION
+##############################
+# FILLING x_ref AND ref_sol
+##############################
+solfoldName="reference_solutions/shock_turbulence_interaction_shu_osher_200000_theta1.3_char_LDCU_CFL0.25"#+nametest
+if(1==1):
+    if os.path.isdir(solfoldName):  #CONDITION: Is it a folder? If yes go on
+        namefile=solfoldName+'/'+"reference.out"
+        if os.path.isfile(namefile): #If the file exists, read it
+            print("You are in the folder "+solfoldName+" dealing with "+namefile)
+            lines=[]
+            with open(namefile, 'r') as a:
+                for idx, line in enumerate(a.readlines()):
+                    lines.append(line)
+
+            x_ref=np.array([])
+            ro_ref=np.array([])
+            q_ref=np.array([])
+            E_ref=np.array([])
+            v_ref=np.array([])
+            p_ref=np.array([])
+
+            #Loop over the lines that we have read
+            for idx, line in enumerate(lines): #rmk: 0-based numeration
+                data=line.split()
+                x_ref=np.append(x_ref,float(data[0]))
+                ro_ref=np.append(ro_ref,float(data[1]))
+                v_ref=np.append(v_ref,float(data[2]))
+                p_ref=np.append(p_ref,float(data[3]))
+                # E_ref=np.append(E_ref,float(data[4]))
+
+            q_ref=ro_ref*v_ref
+            E_ref=p_ref/(gmm-1)+0.5*ro_ref*v_ref**2
+
+            ax_density.plot(x_ref,ro_ref,linestyle="-",linewidth=lwex,label=solution_type,color="k")
+            # ax_v.plot( x_ref, v_ref,linestyle="-",linewidth=lwex,label=solution_type,color="k")
+            # ax_p.plot( x_ref, p_ref,linestyle="-",linewidth=lwex,label=solution_type,color="k")
+            # ax_q.plot( x_ref, q_ref,linestyle="-",linewidth=lwex,label=solution_type,color="k")
+            # ax_E.plot( x_ref, E_ref,linestyle="-",linewidth=lwex,label=solution_type,color="k")
+
+            # Plot the same data on the inset axes
+            axins1_density.plot(x_ref,ro_ref,linestyle="-",linewidth=lwex,label=solution_type,color="k")
+
+
+            index_plot=index_plot+1
+
+
+name_base_folder="simulations_paper"
+coordinate="X"
+
+for indt, test in enumerate(teststocompare): #Loop on the schemes
+    space_reconstruction=test[0]
+    time_scheme         =test[1]
+    post_processing     =test[2]
+    CFL                 =test[3]
+
+    foldName=name_base_folder+"/"+nametest+"/space_reconstruction"+str(space_reconstruction)+"/time_scheme_"+str(time_scheme)+"/PP"+str(post_processing)+"/CFL"+str(CFL)
+    print(foldName)
+
+
+    if os.path.isdir(foldName):  #CONDITION: Is it a folder? If yes go on
+        namefile=foldName+'/'+file
+        if os.path.isfile(namefile): #If the file exists, read it
+            print("You are in the folder "+foldName+" dealing with "+file)
+            filename = "MESH_Coordinate"+coordinate+".dat"
+
+            if os.path.isfile(foldName+"/"+ filename):
+                delimiter_in = ' '
+                headerlines_in = 1
+                mydata_mesh = np.loadtxt(foldName+"/"+ filename, delimiter=delimiter_in, skiprows=headerlines_in)
+                z = mydata_mesh
+                z_ini = min(z)
+                z_end = max(z)
+                Nz    = len(z)
+
+                # Importing the SOLUTION DATA
+                if os.path.isfile(foldName+"/"+ file):
+
+                    mydata_solution = np.loadtxt(foldName+"/"+ file, skiprows=headerlines_in)
+
+                    ro   = mydata_solution[:, 0]
+                    rou    = mydata_solution[:, 1]
+                    rov    = mydata_solution[:, 2]
+                    energy    = mydata_solution[:, 3]
+                    phi  = mydata_solution[:, 4]
+
+                    RO     = ro[:Nz]
+                    ROU    = rou[:Nz]
+                    ROV    = rov[:Nz]
+                    ENERGY = energy[:Nz]
+                    PHI    = phi[:Nz]
+
+                    U=ROU/RO
+                    V=ROV/RO
+
+                    P=(gmm-1.0)*(ENERGY-0.5*RO*(U**2+V**2))
+
+
+                    ax_density.plot(z,RO,marker=markers_space_reconstruction[space_reconstruction],linestyle=linestyles_space_reconstruction[space_reconstruction],linewidth=lw, markersize=ms,label=label_space_reconstruction[space_reconstruction],color=colors[space_reconstruction],alpha=0.7,zorder=3)
+                    index_plot=index_plot+1
+
+                    # Plot the same data on the inset axes
+                    axins1_density.plot(z,RO,marker=markers_space_reconstruction[space_reconstruction],linestyle=linestyles_space_reconstruction[space_reconstruction],linewidth=lw, markersize=ms_zoom*2/(2-0.5/(indt**2+1)),label=label_space_reconstruction[space_reconstruction],color=colors[space_reconstruction],alpha=0.7,zorder=3)
+                    ax_density.set_xlim(xspan)
+
+
+# axins1_density.grid()
+
+# ax_v.grid()
+# ax_p.grid()
+# ax_q.grid()
+# ax_E.grid()
+
+
+# Capturing handles and labels
+handles, labels = pl.gca().get_legend_handles_labels()
+# Define the desired order
+desired_order=np.arange(index_plot)
+# print(np.flip(desired_order))
+desired_order=np.flip(desired_order)
+
+# Reorder handles and labels
+handles[:] = [handles[i] for i in desired_order[:]]
+labels[:] = [labels[i] for i in desired_order[:]]
+
+# Create the legend with reordered handles and labels
+ax_density.legend(handles, labels,fontsize=fs,loc='lower left') #,loc='center left', bbox_to_anchor=(1, 0.5)
+
+# pl.savefig(nametest+"_compare_zoom_density_U_CFL"+str(CFL)+".pdf", format="pdf", bbox_inches="tight")
+pl.savefig(nametest+"_compare_zoom_density_U_CFL"+str(CFL)+"_SSPRK"+str(time_scheme)+"_only_NLDCU.pdf", format="pdf", bbox_inches="tight")
+# pl.show()
+
+
+
