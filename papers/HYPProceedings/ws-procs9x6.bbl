@@ -1,0 +1,82 @@
+\begin{thebibliography}{10}
+
+\bibitem{eymann2013multidimensional}
+T.~A. Eymann and P.~L. Roe, Multidimensional active flux schemes  (2013), in
+  21st AIAA Computational Fluid Dynamics Conference, paper No. 2940.
+
+\bibitem{Zeng14}
+X.~Zeng, A high-order hybrid finite difference-finite volume approach with
+  application to inviscid compressible flow problems: a preliminary study, {\em
+  Comput. \& Fluids} {\bf 98}, 91  (2014).
+
+\bibitem{barsukow2021active}
+W.~Barsukow, The active flux scheme for nonlinear problems, {\em J. Sci.
+  Comput.} {\bf 86}  (2021), paper No. 3.
+
+\bibitem{chudzik2021cartesian}
+E.~Chudzik, C.~Helzel and D.~Kerkmann, The {C}artesian grid active flux method:
+  linear stability and bound preserving limiting, {\em Appl. Math. Comput.}
+  {\bf 393}  (2021), paper No. 125501.
+
+\bibitem{Roe21}
+P.~Roe, Designing {CFD} methods for bandwidth---a physical approach, {\em
+  Comput. \& Fluids} {\bf 214}  (2021), paper No. 104774.
+
+\bibitem{abgrall2023combination}
+R.~Abgrall, A combination of residual distribution and the active flux
+  formulations or a new class of schemes that can combine several writings of
+  the same hyperbolic problem: application to the 1{D} {E}uler equations, {\em
+  Commun. Appl. Math. Comput.} {\bf 5}, 370  (2023).
+
+\bibitem{abgrall2023extensions}
+R.~Abgrall and W.~Barsukow, Extensions of active flux to arbitrary order of
+  accuracy, {\em ESAIM Math. Model. Numer. Anal.} {\bf 57}, 991  (2023).
+
+\bibitem{AL24}
+R.~Abgrall and Y.~Liu, A new approach for designing well-balanced schemes for
+  the shallow water equations: a combination of conservative and primitive
+  formulations, {\em SIAM J. Sci. Comput.} {\bf 46}, A3375  (2024).
+
+\bibitem{ACKM}
+R.~Abgrall, A.~Chertock, A.~Kurganov and L.~Micalizzi, A new semi-discrete
+  finite-volume active flux method for hyperbolic conservation laws, submitted;
+  preprint is available at {\tt
+  https://chertock.wordpress.ncsu.edu/files/2025/05/ACKM25.pdf}.
+
+\bibitem{diaz2019path}
+M.~J. Castro~D{\'{\i}}az, A.~Kurganov and T.~Morales~de Luna, Path-conservative
+  central-upwind schemes for nonconservative hyperbolic systems, {\em ESAIM
+  Math. Model. Numer. Anal.} {\bf 53}, 959  (2019).
+
+\bibitem{gottlieb2001strong}
+S.~Gottlieb, C.-W. Shu and E.~Tadmor, Strong stability-preserving high-order
+  time discretization methods, {\em SIAM Rev.} {\bf 43}, 89  (2001).
+
+\bibitem{abgrall2010comment}
+R.~Abgrall and S.~Karni, A comment on the computation of non-conservative
+  products, {\em J. Comput. Phys.} {\bf 229}, 2759  (2010).
+
+\bibitem{chu2025new}
+S.~Chu, A.~Kurganov and I.~Menshov, New adaptive low-dissipation central-upwind
+  schemes, {\em Appl. Numer. Math.} {\bf 209}, 155  (2025).
+
+\bibitem{Liu2005}
+Y.~Liu, Central schemes on overlapping cells, {\em J. Comput. Phys.} {\bf 209},
+  82  (2005).
+
+\bibitem{LSTZ2}
+Y.~Liu, C.-W. Shu, E.~Tadmor and M.~Zhang, Non-oscillatory hierarchical
+  reconstruction for central and finite volume schemes, {\em Commun. Comput.
+  Phys.} {\bf 2}, 933  (2007).
+
+\bibitem{LSX}
+Y.~Liu, C.-W. Shu and Z.~Xu, Hierarchical reconstruction with up to second
+  degree remainder for solving nonlinear conservation laws, {\em Nonlinearity}
+  {\bf 22}, 2799  (2009).
+
+\bibitem{XLDLS}
+Z.~Xu, Y.~Liu, H.~Du, G.~Lin and C.-W. Shu, Point-wise hierarchical
+  reconstruction for discontinuous {G}alerkin and finite volume methods for
+  solving conservation laws, {\em J. Comput. Phys.} {\bf 230}, 6843  (2011).
+
+\end{thebibliography}

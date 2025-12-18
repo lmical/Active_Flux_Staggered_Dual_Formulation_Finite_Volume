@@ -1,0 +1,9 @@
+HONOM
+pdflatex lore_alex_alina_remi.tex; pdflatex lore_alex_alina_remi.tex; bibtex lore_alex_alina_remi; pdflatex lore_alex_alina_remi.tex; pdflatex lore_alex_alina_remi.tex;
+
+
+HYP
+pdflatex Chertock-Kurganov-Micalizzi.tex; pdflatex Chertock-Kurganov-Micalizzi.tex; bibtex Chertock-Kurganov-Micalizzi; pdflatex Chertock-Kurganov-Micalizzi.tex; pdflatex Chertock-Kurganov-Micalizzi.tex;
+
+
+

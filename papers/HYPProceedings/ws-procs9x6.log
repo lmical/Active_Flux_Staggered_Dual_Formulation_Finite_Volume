@@ -1,0 +1,466 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.25)  1 MAY 2025 14:26
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**ws-procs9x6.tex
+(./ws-procs9x6.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21> (./ws-procs9x6.cls
+Document Class: ws-procs9x6 1994/07/13 v1.2u Standard LaTeX document class
+\minute=\count185
+\hour=\count186
+\trimheight=\dimen138
+\trimwidth=\dimen139
+\typeheight=\dimen140
+\typewidth=\dimen141
+\tempdimen=\dimen142
+\tablewidth=\dimen143
+\normaltextheight=\dimen144
+\tempbox=\box50
+\tablewd=\dimen145
+\trimheight=\dimen146
+\trimwidth=\dimen147
+\typeheight=\dimen148
+\c@part=\count187
+\c@ptitl=\count188
+\@tempcntc=\count189
+\c@section=\count190
+\c@subsection=\count191
+\c@subsubsection=\count192
+\c@paragraph=\count193
+\c@subparagraph=\count194
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\captionbox=\box51
+\c@figure=\count195
+\c@table=\count196
+\c@algorithm=\count197
+\c@assertion=\count198
+\c@assumption=\count199
+\c@claim=\count266
+\c@condition=\count267
+\c@conjecture=\count268
+\c@convention=\count269
+\c@corollary=\count270
+\c@criterion=\count271
+\c@definition=\count272
+\c@example=\count273
+\c@lemma=\count274
+\c@notation=\count275
+\c@observation=\count276
+\c@problem=\count277
+\c@prop=\count278
+\c@proposition=\count279
+\c@question=\count280
+\c@remark=\count281
+\c@theorem=\count282
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen149
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen150
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count283
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count284
+\leftroot@=\count285
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count286
+\DOTSCASE@=\count287
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+\big@size=\dimen151
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count288
+\c@MaxMatrixCols=\count289
+\dotsspace@=\muskip16
+\c@parentequation=\count290
+\dspbrk@lvl=\count291
+\tag@help=\toks17
+\row@=\count292
+\column@=\count293
+\maxfields@=\count294
+\andhelp@=\toks18
+\eqnshift@=\dimen152
+\alignsep@=\dimen153
+\tagshift@=\dimen154
+\tagwidth@=\dimen155
+\totwidth@=\dimen156
+\lineht@=\dimen157
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+\bibindent=\dimen158
+
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip52
+\bibsep=\skip53
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count295
+)
+\c@appendixc=\count296
+\c@subappendixc=\count297
+\c@subsubappendixc=\count298
+\projecttitle=\toks21
+
+(/usr/share/texlive/texmf-dist/tex/latex/cite/chapterbib.sty
+\c@inputfile=\count299
+Package: chapterbib 2010/09/18  v 1.17
+)
+(./ws-rotating.sty
+Package: ws-rotating 1997/09/26, v2.13 Rotation package
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen159
+\Gin@req@width=\dimen160
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count300
+\rot@float@box=\box54
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (./ws-crop9x6.sty
+Package: ws-crop9x6 2014/01/20 WSPC Crop 9x6
+
+(/usr/share/texlive/texmf-dist/tex/latex/crop/crop.sty
+Package: crop 2017/11/19 1.10 crop marks (mf)
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\stockwidth=\dimen161
+\stockheight=\dimen162
+\CROP@index=\count301
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+)
+\CROP@offset=\count302
+Package crop Info: Local config file crop.cfg used on input line 622.
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/xetexconfig/crop.cfg))))
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count303
+\l__pdf_internal_box=\box55
+)
+(./ws-procs9x6.aux)
+\openout1 = `ws-procs9x6.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+
+
+Package chapterbib Warning: The sectionbib option changes "\section *" to "\sec
+tion *" in \thebibliography on input line 192.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count304
+\scratchdimen=\dimen163
+\scratchbox=\box56
+\nofMPsegments=\count305
+\nofMParguments=\count306
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count307
+\MPscratchDim=\dimen164
+\MPnumerator=\count308
+\makeMPintoPDFobject=\count309
+\everyMPtoPDFconversion=\toks24
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package crop Info: requested driver: `' on input line 192.
+Package crop Info: detected driver: `pdftex' on input line 192.
+Package crop Info: using `pdftex' graphics driver on input line 192.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 193
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 193
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+] [2] [3]
+<figure/shock_turbulence_modified_example_1_free_BC_800_density_U_CFL0.25.pdf, 
+id=32, 603.92189pt x 337.61131pt>
+File: figure/shock_turbulence_modified_example_1_free_BC_800_density_U_CFL0.25.
+pdf Graphic file (type pdf)
+<use figure/shock_turbulence_modified_example_1_free_BC_800_density_U_CFL0.25.p
+df>
+Package pdftex.def Info: figure/shock_turbulence_modified_example_1_free_BC_800
+_density_U_CFL0.25.pdf  used on input line 323.
+(pdftex.def)             Requested size: 159.3356pt x 86.19467pt.
+<figure/shock_turbulence_modified_example_1_free_BC_800_rhou_Error_Cell_CFL0.25
+.pdf, id=34, 632.76402pt x 317.20697pt>
+File: figure/shock_turbulence_modified_example_1_free_BC_800_rhou_Error_Cell_CF
+L0.25.pdf Graphic file (type pdf)
+<use figure/shock_turbulence_modified_example_1_free_BC_800_rhou_Error_Cell_CFL
+0.25.pdf>
+Package pdftex.def Info: figure/shock_turbulence_modified_example_1_free_BC_800
+_rhou_Error_Cell_CFL0.25.pdf  used on input line 326.
+(pdftex.def)             Requested size: 153.6447pt x 75.25954pt.
+<figure/shock_turbulence_modified_example_1_free_BC_1600_rhou_Error_Cell_CFL0.2
+5.pdf, id=36, 632.76402pt x 317.20697pt>
+File: figure/shock_turbulence_modified_example_1_free_BC_1600_rhou_Error_Cell_C
+FL0.25.pdf Graphic file (type pdf)
+<use figure/shock_turbulence_modified_example_1_free_BC_1600_rhou_Error_Cell_CF
+L0.25.pdf>
+Package pdftex.def Info: figure/shock_turbulence_modified_example_1_free_BC_160
+0_rhou_Error_Cell_CFL0.25.pdf  used on input line 326.
+(pdftex.def)             Requested size: 153.6447pt x 75.25954pt.
+<figure/shock_turbulence_modified_example_1_free_BC_6400_rhou_Error_Cell_CFL0.2
+5.pdf, id=38, 632.76402pt x 317.20697pt>
+File: figure/shock_turbulence_modified_example_1_free_BC_6400_rhou_Error_Cell_C
+FL0.25.pdf Graphic file (type pdf)
+<use figure/shock_turbulence_modified_example_1_free_BC_6400_rhou_Error_Cell_CF
+L0.25.pdf>
+Package pdftex.def Info: figure/shock_turbulence_modified_example_1_free_BC_640
+0_rhou_Error_Cell_CFL0.25.pdf  used on input line 329.
+(pdftex.def)             Requested size: 153.6447pt x 75.25954pt.
+<figure/shock_turbulence_modified_example_1_free_BC_12800_rhou_Error_Cell_CFL0.
+25.pdf, id=40, 632.76402pt x 317.20697pt>
+File: figure/shock_turbulence_modified_example_1_free_BC_12800_rhou_Error_Cell_
+CFL0.25.pdf Graphic file (type pdf)
+<use figure/shock_turbulence_modified_example_1_free_BC_12800_rhou_Error_Cell_C
+FL0.25.pdf>
+Package pdftex.def Info: figure/shock_turbulence_modified_example_1_free_BC_128
+00_rhou_Error_Cell_CFL0.25.pdf  used on input line 329.
+(pdftex.def)             Requested size: 153.6447pt x 75.25954pt.
+<figure/shock_turbulence_modified_example_2_free_BC_800_density_U_CFL0.25.pdf, 
+id=42, 612.86154pt x 337.61131pt>
+File: figure/shock_turbulence_modified_example_2_free_BC_800_density_U_CFL0.25.
+pdf Graphic file (type pdf)
+<use figure/shock_turbulence_modified_example_2_free_BC_800_density_U_CFL0.25.p
+df>
+Package pdftex.def Info: figure/shock_turbulence_modified_example_2_free_BC_800
+_density_U_CFL0.25.pdf  used on input line 342.
+(pdftex.def)             Requested size: 159.3356pt x 84.91322pt.
+<figure/shock_turbulence_modified_example_2_free_BC_800_rhou_Error_Cell_CFL0.25
+.pdf, id=44, 644.2601pt x 317.20697pt>
+File: figure/shock_turbulence_modified_example_2_free_BC_800_rhou_Error_Cell_CF
+L0.25.pdf Graphic file (type pdf)
+<use figure/shock_turbulence_modified_example_2_free_BC_800_rhou_Error_Cell_CFL
+0.25.pdf>
+Package pdftex.def Info: figure/shock_turbulence_modified_example_2_free_BC_800
+_rhou_Error_Cell_CFL0.25.pdf  used on input line 345.
+(pdftex.def)             Requested size: 153.6447pt x 73.88647pt.
+<figure/shock_turbulence_modified_example_2_free_BC_1600_rhou_Error_Cell_CFL0.2
+5.pdf, id=46, 644.2601pt x 317.20697pt>
+File: figure/shock_turbulence_modified_example_2_free_BC_1600_rhou_Error_Cell_C
+FL0.25.pdf Graphic file (type pdf)
+<use figure/shock_turbulence_modified_example_2_free_BC_1600_rhou_Error_Cell_CF
+L0.25.pdf>
+Package pdftex.def Info: figure/shock_turbulence_modified_example_2_free_BC_160
+0_rhou_Error_Cell_CFL0.25.pdf  used on input line 345.
+(pdftex.def)             Requested size: 153.6447pt x 73.88647pt.
+<figure/shock_turbulence_modified_example_2_free_BC_6400_rhou_Error_Cell_CFL0.2
+5.pdf, id=48, 644.2601pt x 317.20697pt>
+File: figure/shock_turbulence_modified_example_2_free_BC_6400_rhou_Error_Cell_C
+FL0.25.pdf Graphic file (type pdf)
+<use figure/shock_turbulence_modified_example_2_free_BC_6400_rhou_Error_Cell_CF
+L0.25.pdf>
+Package pdftex.def Info: figure/shock_turbulence_modified_example_2_free_BC_640
+0_rhou_Error_Cell_CFL0.25.pdf  used on input line 348.
+(pdftex.def)             Requested size: 153.6447pt x 73.88647pt.
+<figure/shock_turbulence_modified_example_2_free_BC_12800_rhou_Error_Cell_CFL0.
+25.pdf, id=50, 644.2601pt x 317.20697pt>
+File: figure/shock_turbulence_modified_example_2_free_BC_12800_rhou_Error_Cell_
+CFL0.25.pdf Graphic file (type pdf)
+<use figure/shock_turbulence_modified_example_2_free_BC_12800_rhou_Error_Cell_C
+FL0.25.pdf>
+Package pdftex.def Info: figure/shock_turbulence_modified_example_2_free_BC_128
+00_rhou_Error_Cell_CFL0.25.pdf  used on input line 348.
+(pdftex.def)             Requested size: 153.6447pt x 73.88647pt.
+<figure/woodward_colella_400_density_U_CFL0.25.pdf, id=52, 601.68698pt x 337.61
+131pt>
+File: figure/woodward_colella_400_density_U_CFL0.25.pdf Graphic file (type pdf)
+
+<use figure/woodward_colella_400_density_U_CFL0.25.pdf>
+Package pdftex.def Info: figure/woodward_colella_400_density_U_CFL0.25.pdf  use
+d on input line 361.
+(pdftex.def)             Requested size: 159.3356pt x 86.51749pt.
+<figure/woodward_colella_400_rhou_Error_Cell_CFL0.25.pdf, id=54, 639.10019pt x 
+317.20697pt>
+File: figure/woodward_colella_400_rhou_Error_Cell_CFL0.25.pdf Graphic file (typ
+e pdf)
+<use figure/woodward_colella_400_rhou_Error_Cell_CFL0.25.pdf>
+Package pdftex.def Info: figure/woodward_colella_400_rhou_Error_Cell_CFL0.25.pd
+f  used on input line 364.
+(pdftex.def)             Requested size: 153.6447pt x 74.49673pt.
+<figure/woodward_colella_800_rhou_Error_Cell_CFL0.25.pdf, id=56, 639.10019pt x 
+317.20697pt>
+File: figure/woodward_colella_800_rhou_Error_Cell_CFL0.25.pdf Graphic file (typ
+e pdf)
+<use figure/woodward_colella_800_rhou_Error_Cell_CFL0.25.pdf>
+Package pdftex.def Info: figure/woodward_colella_800_rhou_Error_Cell_CFL0.25.pd
+f  used on input line 364.
+(pdftex.def)             Requested size: 153.6447pt x 74.49673pt.
+<figure/woodward_colella_6400_rhou_Error_Cell_CFL0.25.pdf, id=58, 647.1302pt x 
+317.20697pt>
+File: figure/woodward_colella_6400_rhou_Error_Cell_CFL0.25.pdf Graphic file (ty
+pe pdf)
+<use figure/woodward_colella_6400_rhou_Error_Cell_CFL0.25.pdf>
+Package pdftex.def Info: figure/woodward_colella_6400_rhou_Error_Cell_CFL0.25.p
+df  used on input line 367.
+(pdftex.def)             Requested size: 153.6447pt x 73.549pt.
+<figure/woodward_colella_12800_rhou_Error_Cell_CFL0.25.pdf, id=60, 647.1302pt x
+ 317.20697pt>
+File: figure/woodward_colella_12800_rhou_Error_Cell_CFL0.25.pdf Graphic file (t
+ype pdf)
+<use figure/woodward_colella_12800_rhou_Error_Cell_CFL0.25.pdf>
+Package pdftex.def Info: figure/woodward_colella_12800_rhou_Error_Cell_CFL0.25.
+pdf  used on input line 367.
+(pdftex.def)             Requested size: 153.6447pt x 73.549pt.
+ [4] [5 <./figure/shock_turbulence_modified_example_1_free_BC_800_density_U_CFL
+0.25.pdf> <./figure/shock_turbulence_modified_example_1_free_BC_800_rhou_Error_
+Cell_CFL0.25.pdf> <./figure/shock_turbulence_modified_example_1_free_BC_1600_rh
+ou_Error_Cell_CFL0.25.pdf> <./figure/shock_turbulence_modified_example_1_free_B
+C_6400_rhou_Error_Cell_CFL0.25.pdf> <./figure/shock_turbulence_modified_example
+_1_free_BC_12800_rhou_Error_Cell_CFL0.25.pdf>] [6 <./figure/shock_turbulence_mo
+dified_example_2_free_BC_800_density_U_CFL0.25.pdf> <./figure/shock_turbulence_
+modified_example_2_free_BC_800_rhou_Error_Cell_CFL0.25.pdf> <./figure/shock_tur
+bulence_modified_example_2_free_BC_1600_rhou_Error_Cell_CFL0.25.pdf> <./figure/
+shock_turbulence_modified_example_2_free_BC_6400_rhou_Error_Cell_CFL0.25.pdf> <
+./figure/shock_turbulence_modified_example_2_free_BC_12800_rhou_Error_Cell_CFL0
+.25.pdf>] (./ws-procs9x6.bbl [7 <./figure/woodward_colella_400_density_U_CFL0.2
+5.pdf> <./figure/woodward_colella_400_rhou_Error_Cell_CFL0.25.pdf> <./figure/wo
+odward_colella_800_rhou_Error_Cell_CFL0.25.pdf> <./figure/woodward_colella_6400
+_rhou_Error_Cell_CFL0.25.pdf> <./figure/woodward_colella_12800_rhou_Error_Cell_
+CFL0.25.pdf>]) [8] (./ws-procs9x6.aux) ) 
+Here is how much of TeX's memory you used:
+ 4259 strings out of 478287
+ 69907 string characters out of 5849289
+ 362290 words of memory out of 5000000
+ 22371 multiletter control sequences out of 15000+600000
+ 478675 words of font info for 63 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 85i,15n,90p,372b,286s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-su
+per/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfrm1000.pfb>
+Output written on ws-procs9x6.pdf (8 pages, 1174446 bytes).
+PDF statistics:
+ 733 PDF objects out of 1000 (max. 8388607)
+ 291 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+
