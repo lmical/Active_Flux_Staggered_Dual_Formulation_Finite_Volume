@@ -1,0 +1,185 @@
+\documentclass[letter,11pt]{letter}
+
+\usepackage[margin=0.89in]{geometry}
+%\usepackage{moreverb,latexsym}
+%\usepackage{graphics,graphicx,curves,epic,eepic,ulem,bbm,mathbbol,enumerate,latexsym,multicol}
+\usepackage{lipsum}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{caption}
+%\usepackage{epstopdf}
+%\usepackage{theorem}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+%\usepackage{empheq}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{exscale}
+\usepackage{relsize}
+%\usepackage{float}
+\usepackage{picinpar}
+\usepackage{extarrows}
+\usepackage{multirow}
+%\usepackage{cite}
+\usepackage[backend=bibtex,style=numeric]{biblatex}
+\addbibresource{sn-bibliography.bib}
+\defbibheading{bibliography}[\refname]{\par\bigskip\noindent\textbf{#1}\par}
+
+\usepackage{nicefrac}
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist}
+\usepackage[normalem]{ulem}
+\newcommand{\vla}[1]{\textcolor{magenta}{#1}}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{xcolor}
+\usepackage{enumitem,kantlipsum}
+
+%\usepackage{subcaption}
+%\usepackage{epsfig}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\newcommand{\RIcolor}[1]{{\leavevmode\color{red} #1}}
+\newcommand{\RIIcolor}[1]{{\leavevmode\color{blue} #1}}
+\newcommand{\RIIIcolor}[1]{{\leavevmode\color{magenta} #1}}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}  % optional, for clickable references
+
+% Define a custom figure counter for letters
+\newcounter{myfigure}
+\newcommand{\myfigure}[3][0.8\textwidth]{%
+	\refstepcounter{myfigure}%
+	\begin{center}
+		\includegraphics[width=#1, height=0.75\textheight, keepaspectratio]{#2}%
+		\\[0.5em]
+		\textbf{Figure~\themyfigure:} #3
+	\end{center}%
+}
+
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\uvec}[2][3]{\bm{#2\mkern-#1mu}\mkern#1mu}
+
+
+
+
+\newcommand*\xbar[1]{%
+  \hbox{%
+    \vbox{%
+      \hrule height 0.5pt % The actual bar
+      \kern0.4ex%         % Distance between bar and symbol
+      \hbox{%
+        \kern-0.05em%      % Shortening on the left side
+        \ensuremath{#1}%
+        \kern-0.05em%      % Shortening on the right side
+      }%
+    }%
+  }%
+}
+
+% Some of the article customisations are relevant for this class
+
+\name{Alexander Kurganov} % To be used for the return address on the envelope
+\signature{Alexander Kurganov} % Goes after the closing (ie at the end of the letter, with space for a signature)
+\address{Alexander Kurganov\\
+Department of Mathematics\\
+Southern University of Science and Technology\\
+Shenzhen, 518055, China}
+% Alternatively, these may be set on an individual basis within each letter environment.
+
+%\makelabels % this command prints envelope labels on the final page of the document
+
+\begin{document}
+\begin{letter}{Computers \& Fluids\\
+CAF-D-25-00470R1}
+
+\opening{Dear Editor:} % eg Hello.
+We would like to thank the reviewers for carefully reading a revised version of our paper. We have made additional changes to the paper
+following the reviewers' comments.
+
+Below, we outline our responses to the Reviewers' comments and questions. In the revised manuscript, the changes marked in
+{\color{blue}blue} correspond to remarks made by Reviewer II and those marked in {\color{magenta}magenta} correspond to remarks made by
+Reviewer III.
+
+\bigskip
+\underline{Response to the Comments of Reviewer II}
+
+\begin{itemize}[wide, labelwidth=!, labelindent=0pt]
+\item
+{\bf Figure 3.1 caption: $x$'s are not the same}
+
+\smallskip
+{\sc\underline{Reply}}: Corrected.
+\end{itemize}
+
+\bigskip
+\underline{Response to the Comments of Reviewer III}
+\begin{itemize}[wide, labelwidth=!, labelindent=0pt]
+\item
+{\bf Other schemes have successfully mixed non-conservative and conservative formulations of hyperbolic systems, e.g.:
+
+\smallskip
+Elena Gaburro, Walter Boscheri, Simone Chiocchetti, Mario Ricchiuto: Discontinuous Galerkin schemes for hyperbolic systems in
+non-conservative variables: quasi-conservative formulation with subcell finite volume corrections, Computer Methods in Applied Mechanics and
+Engineering, Volume 431 (2024)}
+
+\smallskip
+{\sc\underline{Reply}}: We have added a reference to this paper [18] in the second paragraph on page 2.
+
+\medskip
+\item
+{\bf Phil Roe’s active flux method uses a primitive formulation for point updates without having to resort to a path conservative scheme.
+Besides, using a path conservative type scheme for a system of equations that originally is homogeneous does not seem natural.}
+
+\smallskip
+{\sc\underline{Reply}}: As we have pointed out in Remark 2.2, ``the proposed DF-FV method is not tied to the PCCU scheme and, in principle,
+one can numerically solve the nonconservative system (2.2) using an alternative second-order stable numerical method instead. However, the
+PCCU scheme seems to be a reasonable choice, thanks to its distinctive feature: once the path has been selected, the resulting method is not
+sensitive to a particular choice on the nonconservative formulation; see [8].''
+
+We would like to stress that when the nonconservative terms are present and the solution is discontinuous, it is natural not to neglect the
+contribution of these terms at the cell interfaces. This does not help to recover the conservation properties, but definitely helps to 
+stabilize the numerical solution and to make it less sensitve to a particular form of the nonconservative systems used.
+
+\medskip
+\item
+{\bf We would ask the authors to list in their introduction the advantages of this DF-FV scheme, its advantage over other hybridized schemes
+and including its future potential. It would be good to have this all together in the beginning.}
+
+\smallskip
+{\sc\underline{Reply}}: We have added a passage to point out the future potential of the proposed DF-FV scheme in the third paragraph on
+page 3. One of the main differences between our approach and versions of the Active Flux methods, making use of primitive variables for the
+point values, is a higher level of decoupling between the conservative and primitive degrees of freedom. All of the upcoming applications,
+mentioned in the Introduction in the revised version of the manuscript, exploit such a decoupling with the help of an appropriate
+modification of the post-processing. On the other hand, the strong coupling between cell averages and point values characterizing the
+Active Flux methods makes it difficult to apply the same ideas in a straightforward way. We, however, prefer not to speculate on this point
+in the current paper and to leave this issue for future investigation.
+
+\smallskip
+We would also like to point out that there are many other schemes utilizing the primitive formulation of the governing equations. Conducting
+a thorough comparison between these schemes and the proposed DF-FV method is out of scope of the current paper.
+
+\medskip
+\item
+{\bf There is a small typo on p. 4 after (2.6): “eref 1.2”}
+
+\smallskip
+{\sc\underline{Reply}}: Corrected.
+\end{itemize}
+
+\vspace*{2cm}
+\closing{Sincerely} % eg Regards,
+\end{letter}
+
+\end{document}
+
